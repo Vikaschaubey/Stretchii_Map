@@ -1,0 +1,11 @@
+
+*{box-sizing:border-box;font-family:Arial}
+body{margin:0}
+.container{display:flex;height:100vh}
+.left{width:320px;padding:12px;border-right:1px solid #ccc;overflow:auto}
+.right{width:350px;padding:12px;border-left:1px solid #ccc;overflow:auto}
+#map{flex:1}
+input,select,button{width:100%;padding:10px;margin:5px 0}
+.route-card{padding:8px;border:1px solid #ddd;margin:5px 0;cursor:pointer}
+table{width:100%;border-collapse:collapse}
+td{border:1px solid #ddd;padding:6px}
