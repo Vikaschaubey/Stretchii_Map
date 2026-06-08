@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Route & Geofence Viewer</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="container">
+<div class="left">
+<h3>Upload Excel</h3>
+<input type="file" id="fileInput" accept=".xlsx,.xls,.csv">
+<button id="uploadBtn">Upload & Plot Routes</button>
+
+<h4>Vehicle Upload</h4>
+
+<input
+    type="file"
+    id="vehicleFileInput"
+    accept=".xlsx,.xls,.csv">
+
+<button id="uploadVehicleBtn">
+    Upload Vehicles
+</button>
+
+<h4>Geofence</h4>
+<select id="bufferDistance">
+<option value="10">10 Meter</option>
+<option value="25">25 Meter</option>
+<option value="50">50 Meter</option>
+<option value="100">100 Meter</option>
+<option value="250">250 Meter</option>
+<option value="500">500 Meter</option>
+<option value="1000">1000 Meter</option>
+</select>
+
+<button id="generateBuffer">Generate Geofence</button>
+<div id="routeCount"></div>
+<input type="text" id="routeSearch" placeholder="Search stretches">
+<div id="routeList"></div>
+<h4>Vehicle List</h4>
+<div id="vehicleCount"></div>
+<input type="text" id="vehicleSearch" placeholder="Search vehicles">
+<div id="vehicleList"></div>
+</div>
+
+<div id="map"></div>
+
+<div class="right">
+<h3>Route Details</h3>
+<button id="exportMatchBtn">Export Matched Sheet</button>
+<div id="infoPanel">Select a route</div>
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
